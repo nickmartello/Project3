@@ -24,7 +24,7 @@ mongoose.connect("mongod://localhost/planner");
 
 let Schedule = mongoose.model("Schedule", scheduleSchema);
 
-Schedule
+module.exports = Schedule;
 
 // WORK 
 // EDUCATION
