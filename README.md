@@ -22,6 +22,6 @@ Enter your plans into this calendar and a chart will automatically break down ho
 
 
 # Developers
-[SAM NEE](https://github.com/thesamnee)
-[NICK MARTELLO](https://github.com/nickmartello)
+* [SAM NEE](https://github.com/thesamnee)
+* [NICK MARTELLO](https://github.com/nickmartello)
 
