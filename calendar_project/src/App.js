@@ -14,7 +14,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="https://nickmartello.tech" target="_blank">
+            <a className="navbar-brand" href="https://nickmartello.tech" target="_blank" rel="noopener noreferrer">
               <img src={logo} width="30" height="30" alt="NicksSite" />
             </a>
             <Link to="/" className="navbar-brand">MERN STACK</Link>
