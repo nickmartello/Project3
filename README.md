@@ -17,8 +17,7 @@ Enter your plans into this calendar and a chart will automatically break down ho
 
 
 # LOOKING INTO THE FUTURE...
-* Adding preferences to certain events you would like to do
-* Mulitple groups of friends to share schedule with
+* SMS messaging to alert you when IMPORTANT events are coming up
 
 
 # Developers
