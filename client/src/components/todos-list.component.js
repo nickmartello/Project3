@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const Todo = props => (
     <tr>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_description}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_responsible}</td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_event}</td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_category}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_priority}</td>
         <td>
             <Link to ={"/edit/"+props.todo._id}>Edit</Link>
@@ -21,7 +21,7 @@ export default class Todoslist extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos/')
+        axios.get('http://localhost:5001/todos/')
             .then(response => {
                 this.setState({todos: response.data});
             })
@@ -31,7 +31,7 @@ export default class Todoslist extends Component {
     }
 
     componentDidUpdate() {
-        axios.get('http://localhost:4000/todos/')
+        axios.get('http://localhost:5001/todos/')
             .then(response => {
                 this.setState({todos: response.data});
             })
@@ -53,8 +53,8 @@ export default class Todoslist extends Component {
                 <table className="table table-striped" style={{marginTop: 20}}>
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Responsible</th>
+                            <th>Event</th>
+                            <th>Category</th>
                             <th>Priority</th>
                             <th>Actions</th>
                         </tr>

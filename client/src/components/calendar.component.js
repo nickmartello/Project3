@@ -9,7 +9,8 @@ export default class DemoApp extends React.Component {
 
   render() {
     return (
-      <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]} />
+      <FullCalendar defaultView="dayGridWeek" plugins={[ dayGridPlugin ]} />
+      
     )
   }
 
