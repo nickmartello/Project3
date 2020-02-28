@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 
 
-//import './main.scss' // webpack must be configured to do this
+import '../main.scss' // webpack must be configured to do this
 
 export default class DemoApp extends React.Component {
 
