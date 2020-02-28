@@ -6,26 +6,26 @@ export default class EditTodo extends Component {
     constructor(props) {
         super(props);
 
-        this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
-        this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
+        this.onChangeTodoEvent = this.onChangeTodoEvent.bind(this);
+        this.onChangeTodoCategory = this.onChangeTodoCategory.bind(this);
         this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
         this.onChangeTodoCompleted = this.onChangeTodoCompleted.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            todo_description: '',
-            todo_responsible: '',
+            todo_event: '',
+            todo_category: '',
             todo_priority: '',
             todo_completed: false
         }
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos/'+this.props.match.params.id)
+        axios.get('http://localhost:5001/todos/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    todo_description: response.data.todo_description,
-                    todo_responsible: response.data.todo_responsible,
+                    todo_event: response.data.todo_event,
+                    todo_category: response.data.todo_category,
                     todo_priority: response.data.todo_priority,
                     todo_completed: response.data.todo_completed
                 })
@@ -35,15 +35,15 @@ export default class EditTodo extends Component {
             })
     }
 
-    onChangeTodoDescription(e) {
+    onChangeTodoEvent(e) {
         this.setState({
-            todo_description:  e.target.value
+            todo_event:  e.target.value
         });
     }
 
-    onChangeTodoResponsible(e)  {
+    onChangeTodoCategory(e)  {
         this.setState({
-            todo_responsible: e.target.value
+            todo_category: e.target.value
         });
     }
 
@@ -62,12 +62,12 @@ export default class EditTodo extends Component {
     onSubmit(e) {
         e.preventDefault();
         const obj  = {
-            todo_description: this.state.todo_description,
-            todo_responsible: this.state.todo_responsible,
+            todo_event: this.state.todo_event,
+            todo_category: this.state.todo_category,
             todo_priority: this.state.todo_priority,
             todo_completed: this.state.todo_completed
         };
-        axios.post('http://localhost:4000/todos/update/'+this.props.match.params.id, obj)
+        axios.post('http://localhost:5001/todos/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/');
@@ -79,19 +79,19 @@ export default class EditTodo extends Component {
                 <h3>Update Todo</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Description: </label>
+                        <label>Event: </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.todo_description}
-                                onChange={this.onChangeTodoDescription}
+                                value={this.state.todo_event}
+                                onChange={this.onChangeTodoEvent}
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Responsible: </label>
+                        <label>Category: </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.todo_responsible}
-                                onChange={this.onChangeTodoResponsible}
+                                value={this.state.todo_category}
+                                onChange={this.onChangeTodoCategory}
                                 />
                     </div>
                     <div className="form-group">

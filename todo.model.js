@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let Todo = new Schema({
-    todo_description:{
+    todo_event:{
         type: String
     },
-    todo_responsible: {
+    todo_category: {
         type: String
     },
     todo_priority: {
