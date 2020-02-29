@@ -13,8 +13,8 @@ class App extends Component {
     return ( 
       <container className="body">
       <Router>
-        <Route path="/" exact component={Navbar}/>
-        <Route path="/schedule" component={Schedule} />
+        <Route path="/" component={Navbar} />
+        <Route path="/" component={Schedule} />
         <Route path="/edit/:id" component={EditTodo}/>
         <Route path="/create" component={CreateTodo}/>
       </Router>

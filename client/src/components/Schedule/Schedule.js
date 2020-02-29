@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-
+import './Schedule.css'
 class Schedule extends Component {
     state = {  }
     render() { 
         return ( 
-            <table className="table">
+            <table className="table calendar">
                 <thead>
                     <tr>
                         <th>Sun</th>
@@ -18,13 +18,13 @@ class Schedule extends Component {
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td className="weekDay"></td>
+                        <td className="weekDay"></td>
+                        <td className="weekDay"></td>
+                        <td className="weekDay"></td>
+                        <td className="weekDay"></td>
+                        <td className="weekDay"></td>
+                        <td className="weekDay"></td>
                     </tr>
                 </tbody>
             </table>

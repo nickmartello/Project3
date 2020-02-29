@@ -6,14 +6,15 @@ import { BrowserRouter as Link} from "react-router-dom";
 class Navbar extends Component {
     state = { 
         dash: "active",
-        sched: "inactive"
+        sched: "inactive",
+        activeComponent: "/"
      }
 
      dashClick = () =>{
-         this.setState({dash: "active", sched: "inactive"})
+         this.setState({dash: "active", sched: "inactive", activeComponent: "/"})
      }
      schedClick = () =>{
-        this.setState({dash: "inactive", sched: "active"})
+        this.setState({dash: "inactive", sched: "active", activeComponent: "/schedule"})
     }
 
     render() { 
@@ -24,10 +25,10 @@ class Navbar extends Component {
                         <Link to="settings">Settings</Link>
                     </li>
                     <li onClick={this.dashClick} className={this.state.dash}>
-                        <Link to="/">Dashboard</Link>
+                    Dashboard
                     </li>
                     <li onClick={this.schedClick} className={this.state.sched}>
-                        <Link to="/schedule">Schedule</Link>
+                    Schedule
                     </li>
                 </ul>
             </div>

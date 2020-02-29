@@ -1,0 +1,9 @@
+.calendar{
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+}
+.weekDay{
+    height: 80vh;
+    width: 20vw;
+}
