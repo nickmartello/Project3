@@ -61,7 +61,7 @@
     "desc": "Make a functional planner app for demo day",
     "start": 3,
     "duration": 2,
-    "category": "family"
+    "category": "fun"
 },
 {
     "day": "sat",
@@ -70,5 +70,61 @@
     "start": 3,
     "duration": 2,
     "category": "family"
+},
+{
+    "day": "sun",
+    "title": "Sleep",
+    "desc": "sleep",
+    "start": 10,
+    "duration": 8,
+    "category": "sleep"
+},
+{
+    "day": "mon",
+    "title": "Sleep",
+    "desc": "sleep",
+    "start": 10,
+    "duration": 8,
+    "category": "sleep"
+},
+{
+    "day": "tue",
+    "title": "Sleep",
+    "desc": "sleep",
+    "start": 10,
+    "duration": 8,
+    "category": "sleep"
+},
+{
+    "day": "wed",
+    "title": "Sleep",
+    "desc": "sleep",
+    "start": 10,
+    "duration": 8,
+    "category": "sleep"
+},
+{
+    "day": "thu",
+    "title": "Sleep",
+    "desc": "sleep",
+    "start": 10,
+    "duration": 8,
+    "category": "sleep"
+},
+{
+    "day": "fri",
+    "title": "Sleep",
+    "desc": "sleep",
+    "start": 10,
+    "duration": 8,
+    "category": "sleep"
+},
+{
+    "day": "sat",
+    "title": "Sleep",
+    "desc": "sleep",
+    "start": 10,
+    "duration": 8,
+    "category": "sleep"
 }
 ]

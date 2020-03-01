@@ -6,12 +6,25 @@
 }
 .schedDay{
     border: solid 1px black;
-    width: 12vw;
     height: 90vh;
-    margin-top: 10vh;
-    display: inline-block;
+    top: 10vh;
     position: relative;
+    display: table-cell;
+    text-align: center;
 }
 .schedContainer{
-    display: block;
+    display: table;
+    width: 100%;
+    table-layout: fixed; 
+}
+.addPlan{
+    width: 100%;
+    border-radius: 10px;
+    background-color: none;
+    border: solid 3px rgb(0, 47, 255);
+    color: rgb(0, 47, 255);
+    font-size: 2vw;
+    font-weight: bolder;
+    position: relative;
+    bottom: 0;
 }

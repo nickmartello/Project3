@@ -14,7 +14,7 @@ class App extends Component {
       <container className="body">
         <Router>
           <Route path="/" component={Navbar} />
-          <Route path="/" component={Schedule} />
+          <Route path="/schedule" component={Schedule} />
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />
         </Router>
