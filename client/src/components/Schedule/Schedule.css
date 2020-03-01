@@ -1,9 +1,17 @@
-.calendar{
-    position: absolute;
-    top: 10vh;
-    width: 100%;
+.plan{
+    padding: 10px;
+    border-radius: 20px;
+    margin: 3px;
+    background: rgb(79, 79, 248);
 }
-.weekDay{
-    height: 80vh;
-    width: 20vw;
+.schedDay{
+    border: solid 1px black;
+    width: 12vw;
+    height: 90vh;
+    margin-top: 10vh;
+    display: inline-block;
+    position: relative;
+}
+.schedContainer{
+    display: block;
 }

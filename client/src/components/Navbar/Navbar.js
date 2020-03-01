@@ -22,7 +22,7 @@ class Navbar extends Component {
             <div className="navContainer">
                 <ul className="navUL">
                     <li className="navLeft">
-                        <Link to="settings">Settings</Link>
+                        <Link to="/settings">Settings</Link>
                     </li>
                     <li onClick={this.dashClick} className={this.state.dash}>
                     Dashboard

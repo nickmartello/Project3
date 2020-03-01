@@ -1,154 +1,74 @@
 [
-    {
-        "day":"sun",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 4,
-                "duration": 2,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 7,
-                "duration": 4,
-                "category": "friends"
-            }
-        ]
-    },
-    {
-        "day":"mon",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 2,
-                "duration": 5,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 8,
-                "duration": 1,
-                "category": "friends"
-            }
-        ]
-    },
-    {
-        "day":"sun",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 1,
-                "duration": 2,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 5,
-                "duration": 3,
-                "category": "friends"
-            }
-        ]
-    },
-    {
-        "day":"tue",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 3,
-                "duration": 1,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 5,
-                "duration": 1,
-                "category": "friends"
-            }
-        ]
-    },
-    {
-        "day":"wed",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 4,
-                "duration": 2,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 7,
-                "duration": 4,
-                "category": "friends"
-            }
-        ]
-    },
-    {
-        "day":"thu",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 4,
-                "duration": 2,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 7,
-                "duration": 4,
-                "category": "friends"
-            }
-        ]
-    },
-    {
-        "day":"fri",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 4,
-                "duration": 2,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 7,
-                "duration": 4,
-                "category": "friends"
-            }
-        ]
-    },
-    {
-        "day":"sat",
-        "plans": [
-            {
-                "title":"Make badass calendar",
-                "desc":"Sam is a fucking genius",
-                "start": 4,
-                "duration": 2,
-                "category": "work"
-            },
-            {
-                "title":"This is another plan",
-                "desc":"I hope this works",
-                "start": 7,
-                "duration": 4,
-                "category": "friends"
-            }
-        ]
-    }
+ {
+     "day": "sun",
+     "title": "Planner",
+     "desc": "Make a functional planner app for demo day",
+     "start": 3,
+     "duration": 2,
+     "category": "work"
+ },
+ {
+    "day": "mon",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "fun"
+},
+{
+    "day": "fri",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "chores"
+},
+{
+    "day": "fri",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "chores"
+},
+{
+    "day": "wed",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "work"
+},
+{
+    "day": "tue",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "family"
+},
+{
+    "day": "tue",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "family"
+},
+{
+    "day": "tue",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "family"
+},
+{
+    "day": "sat",
+    "title": "Placeholder",
+    "desc": "Make a functional planner app for demo day",
+    "start": 3,
+    "duration": 2,
+    "category": "family"
+}
 ]
