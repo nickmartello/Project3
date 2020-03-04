@@ -7,6 +7,8 @@ import EditTodo from "./components/EditTodo/EditTodo.js";
 import TodosList from "./components/TodoList/TodoList.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Schedule from "./components/Schedule/Schedule.js";
+import PieChart from "./components/PieChart/PieChart.js"
+import Dashboard from "./components/Dashboard/Dashboard.js";
 
 class App extends Component {
   render() {
@@ -14,6 +16,7 @@ class App extends Component {
       <container className="body">
         <Router>
           <Route path="/" component={Navbar} />
+          <Route exact path="/" component={Dashboard} />
           <Route path="/schedule" component={Schedule} />
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />

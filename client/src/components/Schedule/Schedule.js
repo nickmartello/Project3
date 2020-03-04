@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Plan from "./Plan.js";
 import "./Schedule.css";
-import plans from "./plans.json";
+import plans from "./../../plans.json";
 
 class Schedule extends Component {
   state = {

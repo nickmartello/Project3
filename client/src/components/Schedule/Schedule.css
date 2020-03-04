@@ -1,8 +1,16 @@
 .plan{
-    padding: 10px;
+    padding: 2vh;
     border-radius: 20px;
-    margin: 3px;
+    margin: .2vw;
     background: rgb(79, 79, 248);
+}
+.dayHeader{
+    margin-bottom: 3vh;
+    border-bottom: solid 1px black;
+    width: 80%;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
 }
 .schedDay{
     border: solid 1px black;
@@ -18,7 +26,7 @@
     table-layout: fixed; 
 }
 .addPlan{
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
     background-color: none;
     border: solid 3px rgb(0, 47, 255);
@@ -26,5 +34,5 @@
     font-size: 2vw;
     font-weight: bolder;
     position: relative;
-    bottom: 0;
+    margin: .2vw;
 }
