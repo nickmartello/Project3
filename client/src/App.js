@@ -13,7 +13,7 @@ import Dashboard from "./components/Dashboard/Dashboard.js";
 class App extends Component {
   render() {
     return (
-      <container className="body">
+      <div className="body">
         <Router>
           <Route path="/" component={Navbar} />
           <Route exact path="/" component={Dashboard} />
@@ -21,7 +21,7 @@ class App extends Component {
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />
         </Router>
-      </container>
+      </div>
     );
   }
 }

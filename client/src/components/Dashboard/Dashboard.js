@@ -13,7 +13,6 @@ class Dashboard extends Component {
     plans
   };
 
-
   readData = () => {
     let workArray = [];
     let funArray = [];
