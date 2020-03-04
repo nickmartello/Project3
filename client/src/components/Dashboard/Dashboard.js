@@ -27,7 +27,7 @@ class Dashboard extends Component {
     funArray.push(this.state.plans.filter(plans => plans.category === "fun"));
     //chores
     choresArray.push(
-      this.state.plans.filter(plans => plans.category === "chores").duration
+      this.state.plans.filter(plans => plans.category === "chores")
     );
     //family
     familyArray.push(
