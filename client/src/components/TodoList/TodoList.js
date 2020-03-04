@@ -6,7 +6,6 @@ const Todo = props => (
     <tr>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_event}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_category}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_priority}</td>
         <td>
             <Link to ={"/edit/"+props.todo._id}>Edit</Link>
         </td>
@@ -55,8 +54,6 @@ export default class Todoslist extends Component {
                         <tr>
                             <th>Event</th>
                             <th>Category</th>
-                            <th>Priority</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>

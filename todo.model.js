@@ -2,17 +2,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let Todo = new Schema({
-    todo_event:{
+    day:{
         type: String
     },
-    todo_category: {
+    title: {
         type: String
     },
-    todo_priority: {
+    desc: {
         type: String
     },
-    todo_completed: {
-        type: Boolean
+    start: {
+        type: Number
+    },
+    duration: {
+        type: Number
+    },
+    category: {
+        type: String
     }
 });
 

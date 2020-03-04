@@ -8,7 +8,6 @@ constructor(props){
 
     this.onChangeTodoEvent = this.onChangeTodoEvent.bind(this);
     this.onChangeTodoCategory = this.onChangeTodoCategory.bind(this);
-    this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
 
@@ -16,7 +15,6 @@ constructor(props){
     this.state = {
         todo_event: '',
         todo_category: '',
-        todo_priority: '',
         todo_completed: false
     }
 }
@@ -33,11 +31,6 @@ onChangeTodoCategory(e) {
     });
 }
 
-onChangeTodoPriority(e) {
-    this.setState({
-        todo_priority: e.target.value
-    });
-}
 
 onSubmit(e) {
     e.preventDefault();
@@ -45,13 +38,11 @@ onSubmit(e) {
     console.log(`Form Submitted`);
     console.log(`Todo Event: ${this.state.todo_event}`)
     console.log(`Todo Category: ${this.state.todo_category}`)
-    console.log(`Todo Priority: ${this.state.todo_priority}`)
     console.log(`Todo Completed: ${this.state.todo_completed}`)
 
     const newTodo = {
         todo_event: this.state.todo_event,
         todo_category: this.state.todo_category,
-        todo_priority: this.state.todo_priority,
         todo_completed: this.state.todo_completed
     }
 
@@ -61,7 +52,6 @@ onSubmit(e) {
     this.setState({
         todo_event: '',
         todo_category: '',
-        todo_priority: '',
         todo_completed: false
 
     })
@@ -87,45 +77,6 @@ onSubmit(e) {
                                 value={this.state.todo_category}
                                 onChange={this.onChangeTodoCategory}
                                 />
-                    </div>
-                    <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityLow"
-                                    value="Low"
-                                    checked={this.state.todo_priority === 'Low'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">Low</label>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityMedium"
-                                    value="Medium"
-                                    checked={this.state.todo_priority === 'Medium'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">Medium</label>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityHigh"
-                                    value="High"
-                                    checked={this.state.todo_priority === 'High'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">High</label>
-                        </div>
                     </div>
                     <div className="form-group">
                         <input type="submit" value="Create Todo" className="btn btn-primary" />

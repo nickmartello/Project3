@@ -55,7 +55,6 @@ todoRoutes.route('/update/:id').post(function(req, res){
         else
             todo.todo_event = req.body.todo_event;
             todo.todo_category = req.body.todo_category;
-            todo.todo_priority = req.body.todo_priority;
             todo.todo_completed = req.body.todo_completed;
 
             todo.save().then(todo => {

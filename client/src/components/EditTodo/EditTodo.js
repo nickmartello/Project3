@@ -8,14 +8,12 @@ export default class EditTodo extends Component {
 
         this.onChangeTodoEvent = this.onChangeTodoEvent.bind(this);
         this.onChangeTodoCategory = this.onChangeTodoCategory.bind(this);
-        this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
         this.onChangeTodoCompleted = this.onChangeTodoCompleted.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             todo_event: '',
             todo_category: '',
-            todo_priority: '',
             todo_completed: false
         }
     }
@@ -26,7 +24,6 @@ export default class EditTodo extends Component {
                 this.setState({
                     todo_event: response.data.todo_event,
                     todo_category: response.data.todo_category,
-                    todo_priority: response.data.todo_priority,
                     todo_completed: response.data.todo_completed
                 })
             })
@@ -47,12 +44,6 @@ export default class EditTodo extends Component {
         });
     }
 
-    onChangeTodoPriority(e) {
-        this.setState({
-            todo_priority: e.target.value
-        });
-    }
-
     onChangeTodoCompleted(e) {
         this.setState({
             todo_completed: !this.state.todo_completed
@@ -64,7 +55,6 @@ export default class EditTodo extends Component {
         const obj  = {
             todo_event: this.state.todo_event,
             todo_category: this.state.todo_category,
-            todo_priority: this.state.todo_priority,
             todo_completed: this.state.todo_completed
         };
         axios.post('http://localhost:5001/todos/update/'+this.props.match.params.id, obj)
@@ -94,57 +84,9 @@ export default class EditTodo extends Component {
                                 onChange={this.onChangeTodoCategory}
                                 />
                     </div>
-                    <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityLow"
-                                    value="Low"
-                                    checked={this.state.todo_priority === 'Low'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">Low</label>
-                        </div>
+                   <div>
                     </div>
-                    <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityMedium"
-                                    value="Medium"
-                                    checked={this.state.todo_priority === 'Medium'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">Medium</label>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input  className="form-check-input"
-                                    type="radio"
-                                    name="priorityOptions"
-                                    id="priorityHigh"
-                                    value="High"
-                                    checked={this.state.todo_priority === 'High'}
-                                    onChange={this.onChangeTodoPriority}
-                                    />
-                            <label className="form-check-label">High</label>
-                        </div>
-                        <div className="form-check">
-                            <input type="checkbox"
-                            className="form-check-input"
-                            id="completedCheckbox"
-                            name="completedCheckbox"
-                            onChange={this.onChangeTodoCompleted}
-                            checked={this.state.todo_completed}
-                            value={this.state.todo_completed}
-                            />
-                            <label className="form-check-label" htmlFor="completedCheckbox">
-                                Completed
-                            </label>
-                        </div>
+                    <div>
                         <br/>
                         <div className="form-group">
                             <input type="submit" value="Update Todo" className="btn btn-primary" />
