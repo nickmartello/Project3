@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Plan from "./Plan.js";
 import "./Schedule.css";
 import plans from "./../../plans.json";
+import { Link } from "react-router-dom"
 
 class Schedule extends Component {
   state = {
@@ -25,7 +26,7 @@ class Schedule extends Component {
                 duration={plans.duration}
               />
             ))}
-          <button className="addPlan">+</button>
+          <Link to="/create" className="addPlan">+</Link>
         </div>
         <div className="schedDay" day="mon">
           <h2 className="dayHeader">Mon</h2>
