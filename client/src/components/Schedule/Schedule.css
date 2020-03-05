@@ -15,7 +15,7 @@
 .schedDay{
     border: solid 1px black;
     height: 90vh;
-    top: 10vh;
+    /* top: 10vh; */
     position: relative;
     display: table-cell;
     text-align: center;
@@ -26,13 +26,14 @@
     table-layout: fixed; 
 }
 .addPlan{
-    width: 90%;
-    border-radius: 10px;
-    background-color: none;
-    border: solid 3px rgb(0, 47, 255);
-    color: rgb(0, 47, 255);
-    font-size: 2vw;
-    font-weight: bolder;
-    position: relative;
-    margin: .2vw;
+    position: absolute;
+    width: 7vh;
+    height: 7vh;
+    background-color: rgb(60, 60, 153);
+    color: white;
+    font-size: 5vh;
+    border-radius: 100%;
+    text-align: center;
+    bottom: 5vh;
+    right: 5vh;
 }

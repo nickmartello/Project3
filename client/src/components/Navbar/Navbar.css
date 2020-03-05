@@ -2,7 +2,7 @@
     height: 10vh;
     width: 100%;
     top: 0;
-    position: absolute;
+    position: relative;
     background: rgb(116, 172, 190);
 }
 .navUL{

@@ -26,7 +26,6 @@ class Schedule extends Component {
                 duration={plans.duration}
               />
             ))}
-          <Link to="/create" className="addPlan">+</Link>
         </div>
         <div className="schedDay" day="mon">
           <h2 className="dayHeader">Mon</h2>
@@ -34,15 +33,14 @@ class Schedule extends Component {
             .filter(plans => plans.day === "mon")
             .map(plans => (
               <Plan
-                day={plans.day}
-                title={plans.title}
-                desc={plans.desc}
-                category={plans.category}
-                start={plans.start}
-                duration={plans.duration}
+              day={plans.day}
+              title={plans.title}
+              desc={plans.desc}
+              category={plans.category}
+              start={plans.start}
+              duration={plans.duration}
               />
-            ))}
-          <button className="addPlan">+</button>
+              ))}
         </div>
         <div className="schedDay" day="tue">
           <h2 className="dayHeader">Tue</h2>
@@ -56,9 +54,8 @@ class Schedule extends Component {
                 category={plans.category}
                 start={plans.start}
                 duration={plans.duration}
-              />
-            ))}
-          <button className="addPlan">+</button>
+                />
+                ))}
         </div>
         <div className="schedDay" day="wed">
           <h2 className="dayHeader">Wed</h2>
@@ -66,15 +63,14 @@ class Schedule extends Component {
             .filter(plans => plans.day === "wed")
             .map(plans => (
               <Plan
-                day={plans.day}
-                title={plans.title}
-                desc={plans.desc}
-                category={plans.category}
+              day={plans.day}
+              title={plans.title}
+              desc={plans.desc}
+              category={plans.category}
                 start={plans.start}
                 duration={plans.duration}
-              />
-            ))}
-          <button className="addPlan">+</button>
+                />
+                ))}
         </div>
         <div className="schedDay" day="thu">
           <h2 className="dayHeader">Thu</h2>
@@ -82,15 +78,14 @@ class Schedule extends Component {
             .filter(plans => plans.day === "thu")
             .map(plans => (
               <Plan
-                day={plans.day}
-                title={plans.title}
-                desc={plans.desc}
-                category={plans.category}
-                start={plans.start}
-                duration={plans.duration}
+              day={plans.day}
+              title={plans.title}
+              desc={plans.desc}
+              category={plans.category}
+              start={plans.start}
+              duration={plans.duration}
               />
-            ))}
-          <button className="addPlan">+</button>
+              ))}
         </div>
         <div className="schedDay" day="fri">
           <h2 className="dayHeader">Fri</h2>
@@ -98,15 +93,14 @@ class Schedule extends Component {
             .filter(plans => plans.day === "fri")
             .map(plans => (
               <Plan
-                day={plans.day}
-                title={plans.title}
-                desc={plans.desc}
-                category={plans.category}
-                start={plans.start}
-                duration={plans.duration}
+              day={plans.day}
+              title={plans.title}
+              desc={plans.desc}
+              category={plans.category}
+              start={plans.start}
+              duration={plans.duration}
               />
-            ))}
-          <button className="addPlan">+</button>
+              ))}
         </div>
         <div className="schedDay" day="sat">
           <h2 className="dayHeader">Sat</h2>
@@ -114,15 +108,15 @@ class Schedule extends Component {
             .filter(plans => plans.day === "sat")
             .map(plans => (
               <Plan
-                day={plans.day}
-                title={plans.title}
-                desc={plans.desc}
-                category={plans.category}
-                start={plans.start}
-                duration={plans.duration}
+              day={plans.day}
+              title={plans.title}
+              desc={plans.desc}
+              category={plans.category}
+              start={plans.start}
+              duration={plans.duration}
               />
-            ))}
-          <button className="addPlan">+</button>
+              ))}
+        <Link to="/create"><div className="addPlan">+</div></Link>
         </div>
       </div>
     );
