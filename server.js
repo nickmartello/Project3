@@ -53,12 +53,12 @@ todoRoutes.route('/update/:id').post(function(req, res){
         if (!todo)
             res.status(404).send('data is not found');
         else
-            todo.todo_day = req.body.todo_day;
-            todo.todo_title = req.body.todo_title;
-            todo.todo_description = req.body.todo_description;
-            todo.todo_time = req.body.todo_time;
-            todo.todo_category = req.body.todo_category;
-            todo.todo_completed = req.body.todo_completed;
+            todo.day = req.body.day;
+            todo.title = req.body.title;
+            todo.description = req.body.description;
+            todo.time = req.body.time;
+            todo.category = req.body.category;
+            todo.completed = req.body.completed;
 
             todo.save().then(todo => {
                 res.json('Todo Updated');
