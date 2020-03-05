@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class EditTodo extends Component {
   state = {
-    todo_event: '',
+    todo_title: '',
     todo_category: '',
     todo_completed: false
   }
@@ -12,7 +12,7 @@ class EditTodo extends Component {
     axios.get('http://localhost:5001/todos/' + this.props.match.params.id)
       .then(response => {
         this.setState({
-          todo_event: response.data.todo_event,
+          todo_title: response.data.todo_title,
           todo_category: response.data.todo_category,
           todo_completed: response.data.todo_completed
         })
@@ -22,9 +22,9 @@ class EditTodo extends Component {
       })
   }
 
-  onChangeTodoEvent = e => {
+  onChangeTodoTitle = e => {
     this.setState({
-      todo_event: e.target.value
+      todo_title: e.target.value
     });
   }
 
@@ -43,7 +43,7 @@ class EditTodo extends Component {
   onSubmit = e => {
     e.preventDefault();
     const obj = {
-      todo_event: this.state.todo_event,
+      todo_title: this.state.todo_title,
       todo_category: this.state.todo_category,
       todo_completed: this.state.todo_completed
     };
@@ -62,8 +62,8 @@ class EditTodo extends Component {
             <label>Event: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_event}
-              onChange={this.onChangeTodoEvent}
+              value={this.state.todo_title}
+              onChange={this.onChangeTodoTitle}
             />
           </div>
           <div className="form-group">
