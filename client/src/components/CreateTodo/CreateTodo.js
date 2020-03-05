@@ -35,16 +35,15 @@ class CreateTodo extends Component {
       time: e.target.value
     });
   }
-
   onSubmit = e => {
     e.preventDefault();
 
-    console.log(`Form Submitted`);
-    console.log(`Todo Title: ${this.state.title}`)
-    console.log(`Todo Category: ${this.state.category}`)
-    console.log(`Todo Description: ${this.state.description}`)
-    console.log(`Todo Time: ${this.state.time}`)
-    console.log(`Todo Completed: ${this.state.completed}`)
+    console.log(`Submitted`);
+    console.log(`Title: ${this.state.title}`)
+    console.log(`Category: ${this.state.category}`)
+    console.log(`Description: ${this.state.description}`)
+    console.log(`Time: ${this.state.time}`)
+    console.log(`Completed: ${this.state.completed}`)
 
     const newTodo = {
       day: this.state.day,
@@ -74,7 +73,6 @@ class CreateTodo extends Component {
         <h3>Create New Todo</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-row align-items-center">
-
             <div className="col-auto my-1">
               <label className="mr-sm-2" for="inlineFormCustomSelect">Days</label>
               <select className="custom-select mr-sm-2" id="inlineFormCustomSelect"
@@ -88,7 +86,6 @@ class CreateTodo extends Component {
                 <option value="thu">Thursday</option>
                 <option value="fri">Friday</option>
                 <option value="sat">Saturday</option>
-
               </select>
             </div>
           </div>
