@@ -10,7 +10,6 @@ class CreateTodo extends Component {
     time: '',
     completed: false
   }
-
   onChangeTodoDay = e => {
     this.setState({
       day: e.target.value
@@ -41,20 +40,19 @@ class CreateTodo extends Component {
     e.preventDefault();
 
     console.log(`Form Submitted`);
-    console.log(`Day: ${this.state.day}`)
-    console.log(`Title: ${this.state.title}`)
-    console.log(`Category: ${this.state.category}`)
-    console.log(`Description: ${this.state.description}`)
-    console.log(`Time: ${this.state.time}`)
-    console.log(`Completed: ${this.state.completed}`)
+    console.log(`Todo Title: ${this.state.title}`)
+    console.log(`Todo Category: ${this.state.category}`)
+    console.log(`Todo Description: ${this.state.description}`)
+    console.log(`Todo Time: ${this.state.time}`)
+    console.log(`Todo Completed: ${this.state.completed}`)
 
     const newTodo = {
       day: this.state.day,
       title: this.state.title,
       category: this.state.category,
+      completed: this.state.completed,
       description: this.state.description,
-      time: this.state.time,
-      completed: this.state.completed
+      time: this.state.time
     }
 
     axios.post('http://localhost:5001/todos/add', newTodo)
@@ -76,12 +74,12 @@ class CreateTodo extends Component {
         <h3>Create New Todo</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-row align-items-center">
+
             <div className="col-auto my-1">
               <label className="mr-sm-2" for="inlineFormCustomSelect">Days</label>
-              <select 
-                className="custom-select mr-sm-2"
+              <select className="custom-select mr-sm-2" id="inlineFormCustomSelect"
                 value={this.state.day}
-                onChange={this.onChangeDay}>
+                onChange={this.onChangeTodoDay}>
                 <option selected>Choose Or Die</option>
                 <option value="sun">Sunday</option>
                 <option value="mon">Monday</option>
@@ -90,6 +88,7 @@ class CreateTodo extends Component {
                 <option value="thu">Thursday</option>
                 <option value="fri">Friday</option>
                 <option value="sat">Saturday</option>
+
               </select>
             </div>
           </div>
@@ -98,7 +97,7 @@ class CreateTodo extends Component {
             <input type="text"
               className="form-control"
               value={this.state.title}
-              onChange={this.onChangeTitle}
+              onChange={this.onChangeTodoTitle}
             />
           </div>
           <div className="form-group">
@@ -106,7 +105,7 @@ class CreateTodo extends Component {
             <input type="text"
               className="form-control"
               value={this.state.description}
-              onChange={this.onChangeDescription}
+              onChange={this.onChangeTodoDescription}
             />
           </div>
           <div className="form-group">
@@ -114,15 +113,15 @@ class CreateTodo extends Component {
             <input type="text"
               className="form-control"
               value={this.state.time}
-              onChange={this.onChangeTime}
+              onChange={this.onChangeTodoTime}
             />
           </div>
           <div className="col-auto my-1">
               <label className="mr-sm-2" for="inlineFormCustomSelect">Category</label>
               <select className="custom-select mr-sm-2" id="inlineFormCustomSelect"
                 value={this.state.category}
-                onChange={this.onChangeCategory}>
-                <option selected>Sam Loves Categories</option>
+                onChange={this.onChangeTodoCategory}>
+                <option selected>Sam Loves Categoriew</option>
                 <option value="Work">Work</option>
                 <option value="Fun">Fun</option>
                 <option value="Chores">Chores</option>

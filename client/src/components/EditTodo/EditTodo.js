@@ -3,18 +3,18 @@ import axios from 'axios';
 
 class EditTodo extends Component {
   state = {
-    todo_title: '',
-    todo_category: '',
-    todo_completed: false
+    title: '',
+    category: '',
+    completed: false
   }
 
   componentDidMount() {
     axios.get('http://localhost:5001/todos/' + this.props.match.params.id)
       .then(response => {
         this.setState({
-          todo_title: response.data.todo_title,
-          todo_category: response.data.todo_category,
-          todo_completed: response.data.todo_completed
+          title: response.data.title,
+          category: response.data.category,
+          completed: response.data.completed
         })
       })
       .catch(function (error) {
@@ -22,30 +22,30 @@ class EditTodo extends Component {
       })
   }
 
-  onChangeTodoTitle = e => {
+  onChangeTitle = e => {
     this.setState({
-      todo_title: e.target.value
+      title: e.target.value
     });
   }
 
-  onChangeTodoCategory = e => {
+  onChangeCategory = e => {
     this.setState({
-      todo_category: e.target.value
+      category: e.target.value
     });
   }
 
-  onChangeTodoCompleted = e => {
+  onChangeCompleted = e => {
     this.setState({
-      todo_completed: !this.state.todo_completed
+      completed: !this.state.completed
     });
   }
 
   onSubmit = e => {
     e.preventDefault();
     const obj = {
-      todo_title: this.state.todo_title,
-      todo_category: this.state.todo_category,
-      todo_completed: this.state.todo_completed
+      title: this.state.title,
+      category: this.state.category,
+      completed: this.state.completed
     };
     axios.post('http://localhost:5001/todos/update/' + this.props.match.params.id, obj)
       .then(res => console.log(res.data));
@@ -62,16 +62,16 @@ class EditTodo extends Component {
             <label>Event: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_title}
-              onChange={this.onChangeTodoTitle}
+              value={this.state.title}
+              onChange={this.onChangeTitle}
             />
           </div>
           <div className="form-group">
             <label>Category: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_category}
-              onChange={this.onChangeTodoCategory}
+              value={this.state.category}
+              onChange={this.onChangeCategory}
             />
           </div>
           <div>
