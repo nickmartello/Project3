@@ -3,6 +3,7 @@ import axios from 'axios'
 
 class CreateTodo extends Component {
   state = {
+    todo_day: '',
     todo_title: '',
     todo_category: '',
     todo_description: '',
@@ -10,6 +11,11 @@ class CreateTodo extends Component {
     todo_completed: false
   }
 
+  onChangeTodoDay = e => {
+    this.setState({
+      todo_day: e.target.value
+    });
+  }
   onChangeTodoTitle = e => {
     this.setState({
       todo_title: e.target.value
@@ -35,6 +41,7 @@ class CreateTodo extends Component {
     e.preventDefault();
 
     console.log(`Form Submitted`);
+    console.log(`Todo Day: ${this.state.todo_day}`)
     console.log(`Todo Title: ${this.state.todo_title}`)
     console.log(`Todo Category: ${this.state.todo_category}`)
     console.log(`Todo Description: ${this.state.todo_description}`)
@@ -45,9 +52,9 @@ class CreateTodo extends Component {
       todo_day: this.state.todo_day,
       todo_title: this.state.todo_title,
       todo_category: this.state.todo_category,
-      todo_completed: this.state.todo_completed,
       todo_description: this.state.todo_description,
-      todo_time: this.state.todo_time
+      todo_time: this.state.todo_time,
+      todo_completed: this.state.todo_completed
     }
 
     axios.post('http://localhost:5001/todos/add', newTodo)
@@ -69,10 +76,10 @@ class CreateTodo extends Component {
         <h3>Create New Todo</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-row align-items-center">
-
             <div className="col-auto my-1">
               <label className="mr-sm-2" for="inlineFormCustomSelect">Days</label>
-              <select className="custom-select mr-sm-2" id="inlineFormCustomSelect"
+              <select 
+                className="custom-select mr-sm-2"
                 value={this.state.todo_day}
                 onChange={this.onChangeTodoDay}>
                 <option selected>Choose Or Die</option>
@@ -83,7 +90,6 @@ class CreateTodo extends Component {
                 <option value="thu">Thursday</option>
                 <option value="fri">Friday</option>
                 <option value="sat">Saturday</option>
-
               </select>
             </div>
           </div>
