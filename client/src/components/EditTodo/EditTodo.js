@@ -1,42 +1,61 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 class EditTodo extends Component {
   state = {
+    day: '',
     title: '',
     category: '',
-    completed: false
+    description: '',
+    time: Number,
+    duration: Number
   }
 
   componentDidMount() {
     axios.get('http://localhost:5001/todos/' + this.props.match.params.id)
       .then(response => {
         this.setState({
+          day: response.data.day,
           title: response.data.title,
           category: response.data.category,
-          completed: response.data.completed
+          description: response.data.description,
+          time: response.data.time,
+          duration: response.data.duration
         })
       })
       .catch(function (error) {
         console.log(error)
       })
   }
-
-  onChangeTitle = e => {
+  onChangeTodoDay = e => {
+    this.setState({
+      day: e.target.value
+    });
+  }
+  onChangeTodoTitle = e => {
     this.setState({
       title: e.target.value
     });
   }
-
-  onChangeCategory = e => {
+  onChangeTodoCategory = e => {
     this.setState({
       category: e.target.value
     });
   }
-
-  onChangeCompleted = e => {
+  onChangeTodoDescription = e => {
     this.setState({
-      completed: !this.state.completed
+      description: e.target.value
+    });
+  }
+  onChangeTodoTime = e => {
+    this.setState({
+      time: e.target.value
+    });
+  }
+  onChangeduration = e => {
+    this.setState({
+      duration: this.state.duration
     });
   }
 
@@ -45,7 +64,7 @@ class EditTodo extends Component {
     const obj = {
       title: this.state.title,
       category: this.state.category,
-      completed: this.state.completed
+      duration: this.state.duration
     };
     axios.post('http://localhost:5001/todos/update/' + this.props.match.params.id, obj)
       .then(res => console.log(res.data));
@@ -59,7 +78,7 @@ class EditTodo extends Component {
         <h3>Update Todo</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Event: </label>
+            <label>Title: </label>
             <input type="text"
               className="form-control"
               value={this.state.title}

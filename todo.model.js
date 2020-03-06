@@ -17,8 +17,8 @@ let Todo = new Schema({
     time: {
         type: Number
     },
-    completed: {
-        type: String
+    duration: {
+        type: Number
     },
 });
 

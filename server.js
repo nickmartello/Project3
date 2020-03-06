@@ -40,10 +40,10 @@ todoRoutes.route('/:id').get(function(req, res){
 todoRoutes.route('/create').post(function(req, res){
     let todo = new Todo(req.body);
     todo.save()
-        .then(todo => {
+        .then(_todo => {
             res.status(200).json({'todo': 'todo added succesfully'})
         })
-        .catch(err => {
+        .catch(_err => {
             res.status(400).send('adding new todo failed')
         });
 });
@@ -58,7 +58,7 @@ todoRoutes.route('/update/:id').post(function(req, res){
             todo.description = req.body.description;
             todo.time = req.body.time;
             todo.category = req.body.category;
-            todo.completed = req.body.completed;
+            todo.duration = req.body.duration;
 
             todo.save().then(todo => {
                 res.json('Todo Updated');
