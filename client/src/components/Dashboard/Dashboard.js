@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import PieChart from "./../PieChart/PieChart.js";
-import plans from "./../../plans.json";
 import Fact from "./Fact.js";
 import "./Dashboard.css";
-
+import axios from "axios";
 class Dashboard extends Component {
   state = {
     work: 0,
@@ -13,81 +12,58 @@ class Dashboard extends Component {
     sleep: 0,
     unknown: 0,
     avgSleep: 0,
-    plans
   };
-
+  componentDidMount() {
+    axios.get('http://localhost:4000/todos').then(res => this.readData(res.data))
+  }
   add = (a, b) => a + b;
-
-  readData = () => {
-    let workArray = [];
-    let funArray = [];
-    let choresArray = [];
-    let familyArray = [];
-    let sleepArray = [];
-
-    //work
-    workArray.push(
-      this.state.plans
-        .filter(plans => plans.category === "work")
-        .map(i => {
-          return i.duration;
-        })
-    );
-    //fun
-    funArray.push(
-      this.state.plans
-        .filter(plans => plans.category === "fun")
-        .map(i => {
-          return i.duration;
-        })
-    );
-    //chores
-    choresArray.push(
-      this.state.plans
-        .filter(plans => plans.category === "chores")
-        .map(i => {
-          return i.duration;
-        })
-    );
-    //family
-    familyArray.push(
-      this.state.plans
-        .filter(plans => plans.category === "family")
-        .map(i => {
-          return i.duration;
-        })
-    );
-    //sleep
-    sleepArray.push(
-      this.state.plans
-        .filter(plans => plans.category === "sleep")
-        .map(i => {
-          return i.duration;
-        })
-    );
-
+  readData = (plans) => {
+    const { work, fun, chores, family, sleep } = this.state
+    // cant reduce on empty array, setting initial arrays to zero hours
+    let workArray = [0];
+    let funArray = [0];
+    let choresArray = [0];
+    let familyArray = [0];
+    let sleepArray = [0];
+    // loop through plans array
+    plans.forEach(e => {
+      if(e.category === "Work"){
+        workArray.push(e.duration)
+      }
+      if(e.category === "Fun"){
+        funArray.push(e.duration)
+      }
+      if(e.category === "Chores"){
+        choresArray.push(e.duration)
+      }
+      if(e.category === "Family"){
+        familyArray.push(e.duration)
+      }
+      if(e.category === "Sleep"){
+        sleepArray.push(e.duration)
+      }
+    })
+    // for each array set state to reduced duration or zero
     this.setState({
-      work: workArray.reduce(this.add).reduce(this.add),
-      fun: funArray.reduce(this.add).reduce(this.add),
-      chores: choresArray.reduce(this.add).reduce(this.add),
-      family: familyArray.reduce(this.add).reduce(this.add),
-      sleep: sleepArray.reduce(this.add).reduce(this.add)
+      work: workArray.length > 1 ? workArray.reduce(this.add) : 0,
+      fun: funArray.length > 1 ? funArray.reduce(this.add) : 0,
+      chores: choresArray.length > 1 ? choresArray.reduce(this.add) : 0,
+      family: familyArray.length > 1 ? familyArray.reduce(this.add) : 0,
+      sleep: sleepArray.length > 1 ? sleepArray.reduce(this.add) : 0
     });
     this.setState({
       unknown:
         168 -
-        workArray.reduce(this.add).reduce(this.add) -
-        funArray.reduce(this.add).reduce(this.add) -
-        choresArray.reduce(this.add).reduce(this.add) -
-        familyArray.reduce(this.add).reduce(this.add) -
-        sleepArray.reduce(this.add).reduce(this.add)
+        (workArray.length > 1 ? workArray.reduce(this.add) : 0) -
+        (funArray.length > 1 ? funArray.reduce(this.add) : 0) -
+        (choresArray.length > 1 ? choresArray.reduce(this.add) : 0) -
+        (familyArray.length > 1 ? familyArray.reduce(this.add) : 0) -
+        (sleepArray.length > 1 ? sleepArray.reduce(this.add) : 0)
     });
   };
-
   percentage = number => {
     return Math.floor((number * 100) / 168);
   };
-
   generateWorkFact = num => {
     switch (true) {
       case num >= 60:
@@ -153,7 +129,6 @@ class Dashboard extends Component {
         break;
     }
   };
-
   generateUnknownFact = num => {
     switch (true) {
       case num >= 50:
@@ -164,11 +139,6 @@ class Dashboard extends Component {
         break;
     }
   };
-
-  componentDidMount() {
-    this.readData();
-  }
-
   render() {
     return (
       <div>
@@ -182,7 +152,6 @@ class Dashboard extends Component {
         />
         <div className="insetCircle"></div>
         <div className="outsetCircle"></div>
-
         <Fact
           css="workFact fact"
           text={this.generateWorkFact(this.state.work)}
@@ -204,5 +173,4 @@ class Dashboard extends Component {
     );
   }
 }
-
-export default Dashboard;
+export default Dashboard; 
