@@ -24,6 +24,7 @@ class Schedule extends Component {
                 category={plans.category}
                 start={plans.start}
                 duration={plans.duration}
+                css={plans.category}  
               />
             ))}
         </div>
@@ -39,6 +40,8 @@ class Schedule extends Component {
               category={plans.category}
               start={plans.start}
               duration={plans.duration}
+              css={plans.category}
+
               />
               ))}
         </div>
@@ -54,6 +57,8 @@ class Schedule extends Component {
                 category={plans.category}
                 start={plans.start}
                 duration={plans.duration}
+                css={plans.category}
+
                 />
                 ))}
         </div>
@@ -69,6 +74,8 @@ class Schedule extends Component {
               category={plans.category}
                 start={plans.start}
                 duration={plans.duration}
+                css={plans.category}
+
                 />
                 ))}
         </div>
@@ -84,6 +91,8 @@ class Schedule extends Component {
               category={plans.category}
               start={plans.start}
               duration={plans.duration}
+              css={plans.category}
+
               />
               ))}
         </div>
@@ -99,6 +108,8 @@ class Schedule extends Component {
               category={plans.category}
               start={plans.start}
               duration={plans.duration}
+              css={plans.category}
+
               />
               ))}
         </div>
@@ -114,6 +125,7 @@ class Schedule extends Component {
               category={plans.category}
               start={plans.start}
               duration={plans.duration}
+              css={plans.category}
               />
               ))}
         <Link to="/create"><div className="addPlan">+</div></Link>

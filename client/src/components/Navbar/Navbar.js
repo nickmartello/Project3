@@ -22,13 +22,13 @@ class Navbar extends Component {
       <div className="navContainer">
         <ul className="navUL">
           <li className="navLeft">
-            <Link to="/settings">Settings</Link>
+            <Link className="navItem" to="/settings">Settings</Link>
           </li>
           <li onClick={this.dashClick} className={this.state.dash}>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link className="navItem" to="/">Dashboard</Link>
           </li>
           <li onClick={this.schedClick} className={this.state.sched}>
-            <Link to="/schedule">Schedule</Link>
+            <Link className="navItem" to="/schedule">Schedule</Link>
           </li>
         </ul>
       </div>

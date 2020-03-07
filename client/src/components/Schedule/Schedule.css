@@ -1,24 +1,61 @@
-.plan{
+.work{
+    background-color: #70FF86;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
     padding: 2vh;
     border-radius: 20px;
     margin: .2vw;
-    background: rgb(79, 79, 248);
+    color: white;
+}
+.fun{
+    background-color: #FF70E9;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
+    padding: 2vh;
+    border-radius: 20px;
+    margin: .2vw;
+    color: white;
+}
+.chores{
+    background-color: #80B5FF;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
+    padding: 2vh;
+    border-radius: 20px;
+    margin: .2vw;
+    color: white;
+}
+.family{
+    background-color: #FFCA80;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
+    padding: 2vh;
+    border-radius: 20px;
+    margin: .2vw;
+    color: white;
+}
+.sleep{
+    background-color: #FF7A7A;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
+    padding: 2vh;
+    border-radius: 20px;
+    margin: .2vw;
+    color: white;
 }
 .dayHeader{
+    color: white;
     margin-bottom: 3vh;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px rgb(255, 255, 255);
     width: 80%;
     position: relative;
     margin-right: auto;
     margin-left: auto;
 }
 .schedDay{
-    border: solid 1px black;
-    height: 90vh;
+    border-right: solid 2px rgb(0, 0, 0);
+    height: 87vh;
     /* top: 10vh; */
     position: relative;
     display: table-cell;
     text-align: center;
+    background-image: linear-gradient(rgb(34, 35, 39),rgb(56, 55, 63));
+
 }
 .schedContainer{
     display: table;
@@ -27,13 +64,21 @@
 }
 .addPlan{
     position: absolute;
-    width: 7vh;
-    height: 7vh;
-    background-color: rgb(60, 60, 153);
-    color: white;
+    width: 8vh;
+    height: 8vh;
+    background-image: radial-gradient(rgb(56, 55, 63), rgb(34, 35, 39));
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.726), -3px -3px 20px rgba(102, 181, 255, 0.74);
     font-size: 5vh;
+    color: white;
     border-radius: 100%;
     text-align: center;
     bottom: 5vh;
     right: 5vh;
+    transition: width 1s, height 1s;
+
+}
+.addPlan:hover{
+    transition: width 1s, height 1s;
+    width: 10vh;
+    height: 10vh;
 }

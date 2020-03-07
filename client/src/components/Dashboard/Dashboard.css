@@ -1,6 +1,68 @@
-.chartContainer{
-    position: absolute;
-    left: 10vw;
-    top: 10vw;
-    margin-top: 100vh;
+.fact {
+  font-size: 1.5vw;
+  display: inline-block;
+  width: 35vw;
+  padding: 2vh;
+  border-bottom: solid 1px rgb(255, 255, 255);
+  color: white;
 }
+.workFact {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  text-align: left;
+  border-left: solid 10px #70ff86;
+}
+.choresFact {
+  position: absolute;
+  top: 45vh;
+  left: 0;
+  width: 30vw;
+  text-align: left;
+  border-left: solid 10px #80b5ff;
+}
+.funFact {
+  position: absolute;
+  top: 75vh;
+  left: 0;
+  width: 35vw;
+  text-align: left;
+  border-left: solid 10px #ff70e9;
+}
+.sleepFact {
+  position: absolute;
+  top: 34vh;
+  right: 0;
+  width: 30vw;
+  text-align: right;
+  border-right: solid 10px #ff7a7a;
+}
+.unknownFact {
+  position: absolute;
+  top: 61vh;
+  right: 0;
+  width: 32vw;
+  text-align: right;
+  border-right: solid 10px rgb(43, 45, 53);
+}
+
+.insetCircle {
+  border-radius: 100%;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+  width: 38vw;
+  height: 38vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -41%);
+}
+.outsetCircle {
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    width: 40vw;
+    height: 40vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -41%);
+  }

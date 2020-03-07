@@ -1,9 +1,9 @@
 import React from "react";
 
-const Plan = ({ day, title, desc, start, duration, category }) => {
+const Plan = ({ day, title, desc, start, duration, category, css }) => {
   return (
     <div
-      className="plan"
+      className={css}
       data-day={day}
       start-time={start}
       duration={duration}

@@ -35,3 +35,7 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background: rgb(34, 35, 39);
+  /* background-image: linear-gradient(rgb(43, 45, 53),rgb(24, 25, 27)); */
+}
