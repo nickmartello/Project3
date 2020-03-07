@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const mongoose = require('mongoose')
 const todoRoutes = express.Router();
-const PORT = 5001;
+const PORT = 4000;
 
 let Todo = require('./todo.model');
 
@@ -13,7 +13,7 @@ let Todo = require('./todo.model');
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://127.0.0.1:27017/todos', {useNewUrlParser: true})
 const connection = mongoose.connection;
 
 connection.once('open', function(){
@@ -37,14 +37,14 @@ todoRoutes.route('/:id').get(function(req, res){
     });
 });
 
-todoRoutes.route('/create').post(function(req, res){
+todoRoutes.route('/add').post(function(req, res){
     let todo = new Todo(req.body);
     todo.save()
-        .then(_todo => {
-            res.status(200).json({'todo': 'todo added succesfully'})
+        .then(event => {
+            res.status(200).json({'event': 'event added succesfully'})
         })
-        .catch(_err => {
-            res.status(400).send('adding new todo failed')
+        .catch(err => {
+            res.status(400).send('adding new event failed')
         });
 });
 
@@ -55,13 +55,14 @@ todoRoutes.route('/update/:id').post(function(req, res){
         else
             todo.day = req.body.day;
             todo.title = req.body.title;
+            todo.category = req.body.category;
             todo.description = req.body.description;
             todo.time = req.body.time;
-            todo.category = req.body.category;
             todo.duration = req.body.duration;
 
+
             todo.save().then(todo => {
-                res.json('Todo Updated');
+                res.json('Schedule Updated');
             })
             .catch(err => {
                 res.status(400).send('Update not possible');
