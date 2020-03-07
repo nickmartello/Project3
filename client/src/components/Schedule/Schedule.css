@@ -1,4 +1,4 @@
-.work{
+.Work{
     background-color: #70FF86;
     box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
     padding: 2vh;
@@ -6,7 +6,7 @@
     margin: .2vw;
     color: white;
 }
-.fun{
+.Fun{
     background-color: #FF70E9;
     box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
     padding: 2vh;
@@ -14,7 +14,7 @@
     margin: .2vw;
     color: white;
 }
-.chores{
+.Chores{
     background-color: #80B5FF;
     box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
     padding: 2vh;
@@ -22,7 +22,7 @@
     margin: .2vw;
     color: white;
 }
-.family{
+.Family{
     background-color: #FFCA80;
     box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
     padding: 2vh;
@@ -30,7 +30,7 @@
     margin: .2vw;
     color: white;
 }
-.sleep{
+.Sleep{
     background-color: #FF7A7A;
     box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5), inset -3px -3px 10px rgba(0, 0, 0, 0.192);
     padding: 2vh;

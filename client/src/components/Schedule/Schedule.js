@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 import Plan from "./Plan.js";
 import "./Schedule.css";
-import plans from "./../../plans.json";
 import { Link } from "react-router-dom"
+import axios from 'axios';
 
 class Schedule extends Component {
   state = {
-    plans
+    plans: []
   };
+  
+  componentDidMount(){
+    axios.get("http://localhost:4000/todos")
+      .then(res => {
+        console.log(res)
+        this.setState({
+          plans: res.data
+        })
+      })
+  }
 
   render() {
     return (
