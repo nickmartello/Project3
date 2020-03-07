@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./CreateTodo.css";
+import { withRouter } from 'react-router-dom';
 
 class CreateTodo extends Component {
   state = {
@@ -62,16 +63,19 @@ class CreateTodo extends Component {
 
     axios
       .post("http://localhost:4000/todos/add", newTodo)
-      .then(res => console.log(res.data));
+      .then(res => {
+        this.setState({
+          day: "",
+          title: "",
+          category: "",
+          description: "",
+          time: Number,
+          duration: Number
+        });
+        this.props.history.push("/schedule")
+      });
 
-    this.setState({
-      day: "",
-      title: "",
-      category: "",
-      description: "",
-      time: Number,
-      duration: Number
-    });
+    
   };
 
   render() {
@@ -200,4 +204,4 @@ class CreateTodo extends Component {
   }
 }
 
-export default CreateTodo;
+export default withRouter(CreateTodo);

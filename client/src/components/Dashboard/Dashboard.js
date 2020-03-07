@@ -18,7 +18,6 @@ class Dashboard extends Component {
   }
   add = (a, b) => a + b;
   readData = (plans) => {
-    const { work, fun, chores, family, sleep } = this.state
     // cant reduce on empty array, setting initial arrays to zero hours
     let workArray = [0];
     let funArray = [0];
