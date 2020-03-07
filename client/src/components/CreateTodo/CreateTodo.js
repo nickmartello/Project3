@@ -3,70 +3,72 @@ import axios from 'axios'
 
 class CreateTodo extends Component {
   state = {
-    todo_day: '',
-    todo_title: '',
-    todo_category: '',
-    todo_description: '',
-    todo_time: '',
-    todo_completed: false
+    day: '',
+    title: '',
+    category: '',
+    description: '',
+    time: Number,
+    duration: Number
   }
-
   onChangeTodoDay = e => {
     this.setState({
-      todo_day: e.target.value
+      day: e.target.value
     });
   }
   onChangeTodoTitle = e => {
     this.setState({
-      todo_title: e.target.value
+      title: e.target.value
     });
   }
   onChangeTodoCategory = e => {
     this.setState({
-      todo_category: e.target.value
+      category: e.target.value
     });
   }
   onChangeTodoDescription = e => {
     this.setState({
-      todo_description: e.target.value
+      description: e.target.value
     });
   }
   onChangeTodoTime = e => {
     this.setState({
-      todo_time: e.target.value
+      time: e.target.value
     });
   }
-
+  onChangeTodoDuration = e => {
+    this.setState({
+      duration: e.target.value
+    });
+  }
   onSubmit = e => {
     e.preventDefault();
 
-    console.log(`Form Submitted`);
-    console.log(`Todo Day: ${this.state.todo_day}`)
-    console.log(`Todo Title: ${this.state.todo_title}`)
-    console.log(`Todo Category: ${this.state.todo_category}`)
-    console.log(`Todo Description: ${this.state.todo_description}`)
-    console.log(`Todo Time: ${this.state.todo_time}`)
-    console.log(`Todo Completed: ${this.state.todo_completed}`)
+    console.log(`Submitted`);
+    console.log(`Title: ${this.state.title}`)
+    console.log(`Category: ${this.state.category}`)
+    console.log(`Description: ${this.state.description}`)
+    console.log(`Time: ${this.state.time}`)
+    console.log(`Duration: ${this.state.duration}`)
 
     const newTodo = {
-      todo_day: this.state.todo_day,
-      todo_title: this.state.todo_title,
-      todo_category: this.state.todo_category,
-      todo_description: this.state.todo_description,
-      todo_time: this.state.todo_time,
-      todo_completed: this.state.todo_completed
+      day: this.state.day,
+      title: this.state.title,
+      category: this.state.category,
+      duration: this.state.duration,
+      description: this.state.description,
+      time: this.state.time
     }
 
     axios.post('http://localhost:5001/todos/add', newTodo)
       .then(res => console.log(res.data));
 
     this.setState({
-      todo_day: '',
-      todo_title: '',
-      todo_category: '',
-      todo_description: '',
-      todo_time: '',
-      todo_completed: false
+      day: '',
+      title: '',
+      category: '',
+      description: '',
+      time: Number,
+      duration: Number
     })
   }
 
@@ -78,9 +80,8 @@ class CreateTodo extends Component {
           <div className="form-row align-items-center">
             <div className="col-auto my-1">
               <label className="mr-sm-2" for="inlineFormCustomSelect">Days</label>
-              <select 
-                className="custom-select mr-sm-2"
-                value={this.state.todo_day}
+              <select className="custom-select mr-sm-2" id="inlineFormCustomSelect"
+                value={this.state.day}
                 onChange={this.onChangeTodoDay}>
                 <option selected>Choose Or Die</option>
                 <option value="sun">Sunday</option>
@@ -97,7 +98,7 @@ class CreateTodo extends Component {
             <label>Title: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_title}
+              value={this.state.title}
               onChange={this.onChangeTodoTitle}
             />
           </div>
@@ -105,22 +106,54 @@ class CreateTodo extends Component {
             <label>Description: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_description}
+              value={this.state.description}
               onChange={this.onChangeTodoDescription}
             />
           </div>
           <div className="form-group">
-            <label>Time: </label>
+            <label>Duration: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_time}
-              onChange={this.onChangeTodoTime}
+              value={this.state.duration}
+              onChange={this.onChangeTodoDuration}
             />
           </div>
           <div className="col-auto my-1">
+              <label className="mr-sm-2" for="inlineFormCustomSelect">Time</label>
+              <select className="custom-select mr-sm-2" id="inlineFormCustomSelect"
+                value={this.state.time}
+                onChange={this.onChangeTodoTime}>
+                <option selected>Sam Wants You to Select A Time</option>
+                <option value="24">Midnight</option>
+                <option value="1">1 AM</option>
+                <option value="2">2 AM</option>
+                <option value="3">3 AM</option>
+                <option value="4">4 AM</option>
+                <option value="5">5 AM</option>
+                <option value="6">6 AM</option>
+                <option value="7">7 AM</option>
+                <option value="8">8 AM</option>
+                <option value="9">9 AM</option>
+                <option value="10">10 AM</option>
+                <option value="11">11 AM</option>
+                <option value="12">12 AM</option>
+                <option value="13">1 PM</option>
+                <option value="14">2 PM</option>
+                <option value="15">3 PM</option>
+                <option value="16">4 PM</option>
+                <option value="17">5 PM</option>
+                <option value="18">6 PM</option>
+                <option value="19">7 PM</option>
+                <option value="20">8 PM</option>
+                <option value="21">9 PM</option>
+                <option value="22">10 PM</option>
+                <option value="23">11 PM</option>
+              </select>
+            </div>
+          <div className="col-auto my-1">
               <label className="mr-sm-2" for="inlineFormCustomSelect">Category</label>
               <select className="custom-select mr-sm-2" id="inlineFormCustomSelect"
-                value={this.state.todo_category}
+                value={this.state.category}
                 onChange={this.onChangeTodoCategory}>
                 <option selected>Sam Loves Categories</option>
                 <option value="Work">Work</option>

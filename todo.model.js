@@ -8,18 +8,18 @@ let Todo = new Schema({
     title: {
         type: String
     },
-    desc: {
+    category: {
         type: String
     },
-    start: {
+    description: {
+        type: String
+    },
+    time: {
         type: Number
     },
     duration: {
         type: Number
     },
-    category: {
-        type: String
-    }
 });
 
 module.exports = mongoose.model('Todo', Todo);

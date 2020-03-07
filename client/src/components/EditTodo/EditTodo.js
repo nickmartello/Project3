@@ -1,51 +1,70 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 class EditTodo extends Component {
   state = {
-    todo_title: '',
-    todo_category: '',
-    todo_completed: false
+    day: '',
+    title: '',
+    category: '',
+    description: '',
+    time: Number,
+    duration: Number
   }
 
   componentDidMount() {
     axios.get('http://localhost:5001/todos/' + this.props.match.params.id)
       .then(response => {
         this.setState({
-          todo_title: response.data.todo_title,
-          todo_category: response.data.todo_category,
-          todo_completed: response.data.todo_completed
+          day: response.data.day,
+          title: response.data.title,
+          category: response.data.category,
+          description: response.data.description,
+          time: response.data.time,
+          duration: response.data.duration
         })
       })
       .catch(function (error) {
         console.log(error)
       })
   }
-
+  onChangeTodoDay = e => {
+    this.setState({
+      day: e.target.value
+    });
+  }
   onChangeTodoTitle = e => {
     this.setState({
-      todo_title: e.target.value
+      title: e.target.value
     });
   }
-
   onChangeTodoCategory = e => {
     this.setState({
-      todo_category: e.target.value
+      category: e.target.value
     });
   }
-
-  onChangeTodoCompleted = e => {
+  onChangeTodoDescription = e => {
     this.setState({
-      todo_completed: !this.state.todo_completed
+      description: e.target.value
+    });
+  }
+  onChangeTodoTime = e => {
+    this.setState({
+      time: e.target.value
+    });
+  }
+  onChangeduration = e => {
+    this.setState({
+      duration: this.state.duration
     });
   }
 
   onSubmit = e => {
     e.preventDefault();
     const obj = {
-      todo_title: this.state.todo_title,
-      todo_category: this.state.todo_category,
-      todo_completed: this.state.todo_completed
+      title: this.state.title,
+      category: this.state.category,
+      duration: this.state.duration
     };
     axios.post('http://localhost:5001/todos/update/' + this.props.match.params.id, obj)
       .then(res => console.log(res.data));
@@ -59,19 +78,19 @@ class EditTodo extends Component {
         <h3>Update Todo</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Event: </label>
+            <label>Title: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_title}
-              onChange={this.onChangeTodoTitle}
+              value={this.state.title}
+              onChange={this.onChangeTitle}
             />
           </div>
           <div className="form-group">
             <label>Category: </label>
             <input type="text"
               className="form-control"
-              value={this.state.todo_category}
-              onChange={this.onChangeTodoCategory}
+              value={this.state.category}
+              onChange={this.onChangeCategory}
             />
           </div>
           <div>

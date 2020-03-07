@@ -40,10 +40,10 @@ todoRoutes.route('/:id').get(function(req, res){
 todoRoutes.route('/create').post(function(req, res){
     let todo = new Todo(req.body);
     todo.save()
-        .then(todo => {
+        .then(_todo => {
             res.status(200).json({'todo': 'todo added succesfully'})
         })
-        .catch(err => {
+        .catch(_err => {
             res.status(400).send('adding new todo failed')
         });
 });
@@ -53,12 +53,12 @@ todoRoutes.route('/update/:id').post(function(req, res){
         if (!todo)
             res.status(404).send('data is not found');
         else
-            todo.todo_day = req.body.todo_day;
-            todo.todo_title = req.body.todo_title;
-            todo.todo_description = req.body.todo_description;
-            todo.todo_time = req.body.todo_time;
-            todo.todo_category = req.body.todo_category;
-            todo.todo_completed = req.body.todo_completed;
+            todo.day = req.body.day;
+            todo.title = req.body.title;
+            todo.description = req.body.description;
+            todo.time = req.body.time;
+            todo.category = req.body.category;
+            todo.duration = req.body.duration;
 
             todo.save().then(todo => {
                 res.json('Todo Updated');
