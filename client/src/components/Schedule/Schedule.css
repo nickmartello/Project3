@@ -48,7 +48,8 @@
     margin-left: auto;
 }
 .schedDay{
-    border-right: solid 2px rgb(0, 0, 0);
+    border-right: solid 2px rgb(29, 31, 39);
+    ;
     height: 87vh;
     /* top: 10vh; */
     position: relative;

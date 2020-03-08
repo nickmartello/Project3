@@ -30,9 +30,9 @@ class Schedule extends Component {
               <Plan
                 day={plans.day}
                 title={plans.title}
-                desc={plans.desc}
+                desc={plans.description}
                 category={plans.category}
-                start={plans.start}
+                start={plans.time}
                 duration={plans.duration}
                 css={plans.category}  
               />
@@ -46,9 +46,9 @@ class Schedule extends Component {
               <Plan
               day={plans.day}
               title={plans.title}
-              desc={plans.desc}
+              desc={plans.description}
               category={plans.category}
-              start={plans.start}
+              start={plans.time}
               duration={plans.duration}
               css={plans.category}
 
@@ -63,9 +63,9 @@ class Schedule extends Component {
               <Plan
                 day={plans.day}
                 title={plans.title}
-                desc={plans.desc}
+                desc={plans.description}
                 category={plans.category}
-                start={plans.start}
+                start={plans.time}
                 duration={plans.duration}
                 css={plans.category}
 
@@ -80,9 +80,9 @@ class Schedule extends Component {
               <Plan
               day={plans.day}
               title={plans.title}
-              desc={plans.desc}
+              desc={plans.description}
               category={plans.category}
-                start={plans.start}
+                start={plans.time}
                 duration={plans.duration}
                 css={plans.category}
 
@@ -97,9 +97,9 @@ class Schedule extends Component {
               <Plan
               day={plans.day}
               title={plans.title}
-              desc={plans.desc}
+              desc={plans.description}
               category={plans.category}
-              start={plans.start}
+              start={plans.time}
               duration={plans.duration}
               css={plans.category}
 
@@ -114,9 +114,9 @@ class Schedule extends Component {
               <Plan
               day={plans.day}
               title={plans.title}
-              desc={plans.desc}
+              desc={plans.description}
               category={plans.category}
-              start={plans.start}
+              start={plans.time}
               duration={plans.duration}
               css={plans.category}
 
@@ -131,9 +131,9 @@ class Schedule extends Component {
               <Plan
               day={plans.day}
               title={plans.title}
-              desc={plans.desc}
+              desc={plans.description}
               category={plans.category}
-              start={plans.start}
+              start={plans.time}
               duration={plans.duration}
               css={plans.category}
               />

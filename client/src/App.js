@@ -8,6 +8,7 @@ import EditTodo from "./components/EditTodo/EditTodo.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Schedule from "./components/Schedule/Schedule.js";
 import Dashboard from "./components/Dashboard/Dashboard.js";
+import PlanDetail from "./components/Schedule/PlanDetail.js"
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path="/schedule" component={Schedule} />
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />
+          <Route path="/plan/:id" component={PlanDetail} />
         </Router>
       </div>
     );
