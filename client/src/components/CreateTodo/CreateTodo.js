@@ -162,14 +162,18 @@ class CreateTodo extends Component {
               </select>
             </div>
             <div className="col-auto form-group">
-              <label  className="header">Duration (Hours): </label>
+              <label  className="header">Duration (Hours): {this.state.duration} </label>
               <input
-              placeholder="Whole Numbers, e.g. '5'"
-                type="text"
-                className="form-control"
+                type="range"
+                min="1"
+                max="24"
+                step="1"
+                value="1"
+                className="form-control slider"
                 value={this.state.duration}
                 onChange={this.onChangeTodoDuration}
               />
+
             </div>
             <div className="col-auto my-1">
               <label className="mr-sm-2 header" for="inlineFormCustomSelect">
