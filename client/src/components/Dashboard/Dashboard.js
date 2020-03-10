@@ -3,6 +3,8 @@ import PieChart from "./../PieChart/PieChart.js";
 import Fact from "./Fact.js";
 import "./Dashboard.css";
 import axios from "axios";
+
+
 class Dashboard extends Component {
   state = {
     work: 0,
@@ -11,11 +13,12 @@ class Dashboard extends Component {
     family: 0,
     sleep: 0,
     unknown: 0,
-    avgSleep: 0,
-  };
+    avgSleep: 0
+    };
   componentDidMount() {
     axios.get('http://localhost:4000/todos').then(res => this.readData(res.data))
   }
+
   add = (a, b) => a + b;
   readData = (plans) => {
     // cant reduce on empty array, setting initial arrays to zero hours
