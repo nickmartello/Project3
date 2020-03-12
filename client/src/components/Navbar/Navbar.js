@@ -22,7 +22,7 @@ class Navbar extends Component {
       <div className="navContainer">
         <ul className="navUL">
           <li className="navLeft">
-            <Link className="navItem" to="/settings">Settings</Link>
+            <p className="navItem">TOREDO</p>
           </li>
           <li onClick={this.dashClick} className={this.state.dash}>
             <Link className="navItem" to="/">Dashboard</Link>

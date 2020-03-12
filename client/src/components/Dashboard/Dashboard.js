@@ -4,7 +4,6 @@ import Fact from "./Fact.js";
 import "./Dashboard.css";
 import axios from "axios";
 
-
 class Dashboard extends Component {
   state = {
     work: 0,
@@ -14,13 +13,15 @@ class Dashboard extends Component {
     sleep: 0,
     unknown: 0,
     avgSleep: 0
-    };
+  };
   componentDidMount() {
-    axios.get('http://localhost:4000/todos').then(res => this.readData(res.data))
+    axios
+      .get("http://localhost:4000/todos")
+      .then(res => this.readData(res.data));
   }
 
   add = (a, b) => a + b;
-  readData = (plans) => {
+  readData = plans => {
     // cant reduce on empty array, setting initial arrays to zero hours
     let workArray = [0];
     let funArray = [0];
@@ -29,22 +30,22 @@ class Dashboard extends Component {
     let sleepArray = [0];
     // loop through plans array
     plans.forEach(e => {
-      if(e.category === "Work"){
-        workArray.push(e.duration)
+      if (e.category === "Work") {
+        workArray.push(e.duration);
       }
-      if(e.category === "Fun"){
-        funArray.push(e.duration)
+      if (e.category === "Fun") {
+        funArray.push(e.duration);
       }
-      if(e.category === "Chores"){
-        choresArray.push(e.duration)
+      if (e.category === "Chores") {
+        choresArray.push(e.duration);
       }
-      if(e.category === "Family"){
-        familyArray.push(e.duration)
+      if (e.category === "Family") {
+        familyArray.push(e.duration);
       }
-      if(e.category === "Sleep"){
-        sleepArray.push(e.duration)
+      if (e.category === "Sleep") {
+        sleepArray.push(e.duration);
       }
-    })
+    });
     // for each array set state to reduced duration or zero
     this.setState({
       work: workArray.length > 1 ? workArray.reduce(this.add) : 0,
@@ -144,6 +145,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
+      <div className="pieDiv">
         <PieChart
           work={this.state.work}
           fun={this.state.fun}
@@ -151,14 +153,16 @@ class Dashboard extends Component {
           family={this.state.family}
           sleep={this.state.sleep}
           unknown={this.state.unknown}
-        />
-        <div className="insetCircle"></div>
+          />
+          </div>
         <div className="outsetCircle"></div>
         <Fact
           css="workFact fact"
           text={this.generateWorkFact(this.state.work)}
         />
-        <Fact css="funFact fact" text={this.generateFunFact(this.state.fun)} />
+        <Fact
+          css="funFact fact"
+          text={this.generateFunFact(this.state.fun)} />
         <Fact
           css="choresFact fact"
           text={this.generateChoresFact(this.state.chores)}
@@ -175,4 +179,4 @@ class Dashboard extends Component {
     );
   }
 }
-export default Dashboard; 
+export default Dashboard;
