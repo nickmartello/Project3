@@ -83,3 +83,46 @@
     width: 10vh;
     height: 10vh;
 }
+.cardBody{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    background-image: radial-gradient(rgb(56, 55, 63), rgb(34, 35, 39));
+    color: white;
+    width: 80vw;
+    border-radius: 30px;
+    line-height: 5vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40vh;
+}
+.insetBox{
+    box-shadow: inset 3px 3px 20px rgb(0, 0, 0), inset -3px -3px 20px rgba(98, 171, 180, 0.267);
+    width: 85vw;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+}
+
+.deleteBtn{
+    background-color: none;
+    color: red;
+    border: solid 2px red;
+    border-radius: 10px;
+    background-image: radial-gradient(rgb(56, 55, 63), rgb(34, 35, 39));
+}
+.header, .description, .time{
+    text-align: center;
+    margin: 3vh;
+}
+.description{
+    font-size: 3vh;
+}
+.deleteBtn{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}

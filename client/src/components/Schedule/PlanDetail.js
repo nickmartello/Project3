@@ -10,7 +10,9 @@ const PlanDetail = ({title, desc, start, end, dur}) => {
         <div className="cardBody">
             <h1 className="header">{title}</h1>
             <h2 className="description">{desc}</h2>
-            <h3 className="time">{start}-{end} ({percOfDay(dur)})</h3>
+            <h3 className="time">{start}-{end} ({percOfDay(dur)}% of your day)</h3>
+            <button className="deleteBtn">Delete</button>
+            <div className="insetBox"></div>
         </div>
     )
     

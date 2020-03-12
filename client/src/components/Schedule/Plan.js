@@ -15,7 +15,7 @@ const Plan = ({ day, title, desc, start, duration, category, css }) => {
     <div
       className={css}
       data-day={day}
-      start-time={start}
+      start-time={translateTime(start)}
       duration={duration}
       category={category}
       >

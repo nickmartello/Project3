@@ -11,10 +11,10 @@ import Dashboard from "./components/Dashboard/Dashboard.js";
 import PlanDetail from "./components/Schedule/PlanDetail.js"
 
 class App extends Component {
+
   render() {
     return (
-      <div className="body">
-        <Router>
+      <Router>
           <Route path="/" component={Navbar} />
           <Route exact path="/" component={Dashboard} />
           <Route path="/schedule" component={Schedule} />
@@ -22,7 +22,6 @@ class App extends Component {
           <Route path="/create" component={CreateTodo} />
           <Route path="/plan/:id" component={PlanDetail} />
         </Router>
-      </div>
     );
   }
 }
